@@ -28,9 +28,7 @@ UnArrayAleatorio(who, action, what, when);
 const UnArrayAleatorio1 = (word0, word1, word2, word3) => {
   let NumberRandom = Math.floor(Math.random() * word3.length);
 
-  return console.log(
-    `${word0[NumberRandom]} ${word1[NumberRandom]} ${word2[NumberRandom]} ${word3[NumberRandom]}`
-  );
+  return console.log(`${word0[NumberRandom]} ${word1[NumberRandom]} ${word2[NumberRandom]} ${word3[NumberRandom]}`);
 };
 
 UnArrayAleatorio1(who, action, what, when);
