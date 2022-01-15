@@ -13,11 +13,10 @@ let when = [
   "right on time",
   "when I finished",
   "during my lunch",
-  "while I was praying",
+  "while I was praying"
 ];
 
 const UnArrayAleatorio = (word0, word1, word2, word3) => {
-
   let NumberRandom0 = Math.floor(Math.random() * word0.length);
   let NumberRandom1 = Math.floor(Math.random() * word1.length);
   let NumberRandom2 = Math.floor(Math.random() * word2.length);
