@@ -23,7 +23,7 @@ const UnArrayAleatorio = (word0, word1, word2, word3) => {
 
 UnArrayAleatorio(who, action, what, when);
 
-// OPTIMIZATION ()
+// OPTIMIZATION 
 
 const UnArrayAleatorio1 = (word0, word1, word2, word3) => {
   let NumberRandom = Math.floor(Math.random() * word3.length);
