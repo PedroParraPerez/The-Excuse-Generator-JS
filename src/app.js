@@ -8,27 +8,38 @@ import "./assets/img/4geeks.ico";
 let who = ["The dog", "My grandma", "His turtle", "My bird"];
 let action = ["ate", "peed", "crushed", "broke"];
 let what = ["my homework", "the keys", "the car"];
-let when = ["before the class","right on time","when I finished","during my lunch","while I was praying"];
+let when = [
+  "before the class",
+  "right on time",
+  "when I finished",
+  "during my lunch",
+  "while I was praying",
+];
+// Dos formas de hacer el ejercicio, la primera "UnArrayAleatorio" con la imposibilidad de realizar testeos de la funcion ya que la funcion tiene dos funciones asignadas
+// La segunda forma, dividimos la funcion en dos funciones (Una para cada tarea) de tal forma que podremos realizar testeos.
+// Siempre tenemos que tratar que una funcion tenga como trabajo realziar UNA sola funcion.
 
-const UnArrayAleatorio = (word0, word1, word2, word3) => {
-  let NumberRandom0 = Math.floor(Math.random() * word0.length);
-  let NumberRandom1 = Math.floor(Math.random() * word1.length);
-  let NumberRandom2 = Math.floor(Math.random() * word2.length);
-  let NumberRandom3 = Math.floor(Math.random() * word3.length);
+const UnArrayAlea = (array) => {
+  let NumberRandom0 = Math.floor(Math.random() * array.length);
 
-  return console.log(
-    `${word0[NumberRandom0]} ${word1[NumberRandom1]} ${word2[NumberRandom2]} ${word3[NumberRandom3]}`
-  );
+  return array[NumberRandom0];
 };
 
-UnArrayAleatorio(who, action, what, when);
+console.log(
+  `${UnArrayAlea(who)} ${UnArrayAlea(action)} ${UnArrayAlea(
+    what
+  )} ${UnArrayAlea(when)}`
+);
 
-// OPTIMIZATION 
+const RandomIndex = (arr) => Math.floor(Math.random() * arr.length);
+const RandomItem = (arr, i) => arr[i];
 
-const UnArrayAleatorio1 = (word0, word1, word2, word3) => {
-  let NumberRandom = Math.floor(Math.random() * word3.length);
-
-  return console.log(`${word0[NumberRandom]} ${word1[NumberRandom]} ${word2[NumberRandom]} ${word3[NumberRandom]}`);
-};
-
-UnArrayAleatorio1(who, action, what, when);
+console.log(
+  `${RandomItem(who, RandomIndex(who))} ${RandomItem(
+    action,
+    RandomIndex(action)
+  )} ${RandomItem(what, RandomIndex(what))} ${RandomItem(
+    when,
+    RandomIndex(when)
+  )}`
+);
