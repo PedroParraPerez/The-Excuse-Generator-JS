@@ -1,9 +1,8 @@
-/* eslint-disable */
-import "bootstrap";
-import "./style.css";
+const excuseDOM = document.querySelector("#excusa");
 
-import "./assets/img/rigo-baby.jpg";
-import "./assets/img/4geeks.ico";
+window.onload = function() {
+  excuseDOM.innerHTML = excuseGenerator(dataset);
+};
 
 let who = ["The dog", "My grandma", "His turtle", "My bird"];
 let action = ["ate", "peed", "crushed", "broke"];
@@ -15,44 +14,11 @@ let when = [
   "during my lunch",
   "while I was praying"
 ];
-
-let saludos = ["Hola", "Buenas", "Hi"];
-let ArrayOfArrays = [who, action, what, when, saludos];
-// Dos formas de hacer el ejercicio, la primera "UnArrayAleatorio" con la imposibilidad de realizar testeos de la funcion ya que la funcion tiene dos funciones asignadas
-// La segunda forma, dividimos la funcion en dos funciones (Una para cada tarea) de tal forma que podremos realizar testeos.
-// Siempre tenemos que tratar que una funcion tenga como trabajo realziar UNA sola funcion.
-
-const UnArrayAlea = array => {
-  let NumberRandom0 = Math.floor(Math.random() * array.length);
-
-  return array[NumberRandom0];
-};
-
-console.log(
-  `${UnArrayAlea(who)} ${UnArrayAlea(action)} ${UnArrayAlea(
-    what
-  )} ${UnArrayAlea(when)}`
-);
-
-const RandomIndex = arr => Math.floor(Math.random() * arr.length);
-const RandomItem = (arr, i) => arr[i];
-
-console.log(
-  `${RandomItem(who, RandomIndex(who))} ${RandomItem(
-    action,
-    RandomIndex(action)
-  )} ${RandomItem(what, RandomIndex(what))} ${RandomItem(
-    when,
-    RandomIndex(when)
-  )}`
-);
-
-// Ahora lo haremos de la misma forma pero independientemente del numero de arrays que tengamos, generando un array de array//
+let dataset = [who, action, what, when];
 
 const RandomIndex = arr => Math.floor(Math.random() * arr.length);
 const RandomItem = (arr, i) => arr[i];
 const GetString = arr => `${RandomItem(arr, RandomIndex(arr))} `;
-
 const excuseGenerator = arr => {
   let str = "";
   for (let d of arr) {
@@ -60,5 +26,3 @@ const excuseGenerator = arr => {
   }
   return str;
 };
-
-console.log(excuseGenerator(ArrayOfArrays));
